@@ -42,28 +42,24 @@
             </div>
         </nav>
 
-        <main class="content-area">
+        <div class="content-area">
             <div class="search-bar col-md-6 mx-auto">
                 <h1 class="text-center">Lyrics Search</h1>
-                <form id="input-form"> 
+                <form id="form"> 
                 <div class="search-box my-5">
-                    <input id="search-box" type="text" class="form-control" placeholder="Enter your artist song name">
-                    <button "type="submit" class="btn btn-success search-btn">Search</button>
+                    <input id="search" type="text" class="form-control" placeholder="Enter your artist song name">
+                    <button class="btn btn-success search-btn">Search</button>
                 </div>
             </form>
             </div>
 
-            <!-- Single Lyrics -->
-            <div class="single-lyrics text-center">
-                <button class="btn go-back">&lsaquo;</button>
-                <h2 class="text-success mb-4"></h2>
-                <pre class="lyric text-white"></pre>
-            </div>
+
             <!-- === Fancy results === -->
-            <div class="search-result col-md-8 mx-auto py-4">
+            <div class="col-md-8 mx-auto py-4" >
                 <!-- single result -->
-                <div class="single-result row align-items-center my-3 p-3">
-                    <div id="display-result" class="row result m-3 align-items-center"></div>
+                <div id="display-result">
+                    <!-- This mapping function goes there -->
+                    <!-- Single Lyrics goes there-->
                 </div>
                 <!-- ./ single result -->
             </div>
