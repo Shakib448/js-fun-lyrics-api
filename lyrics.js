@@ -78,23 +78,33 @@ result.addEventListener('click', e =>{
 //Get Lyrics
 
 async function getLyrics(artist, songTitle){
-    const res = await fetch(`${API_URL}/v1/${artist}/${songTitle}`); // Here is the most tricky part
-    const data = await res.json()
+    try {
+        let res = await fetch(`${API_URL}/v1/${artist}/${songTitle}`); // Here is the most tricky part
+        let data = await res.json()
+            
+        const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br/>'); // This will replace all the lyrics at the same time
 
-    const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br/>'); // This will replace all the lyrics at the same time
+        if(data.lyrics == undefined){
+            alert('No lyrics fount !!!')
+        } 
 
-    result.innerHTML = `
+        result.innerHTML = `
 
-    <div class="single-lyrics text-center">
+        <div class="single-lyrics text-center">
 
-    <h2 class="text-success mb-4">${artist} - ${songTitle}</h2>
+        <h2 class="text-success mb-4">${artist} - ${songTitle}</h2>
 
-    <pre class="lyric text-white">${lyrics}</pre>
+        <pre class="lyric text-white">${lyrics}</pre>
 
-    </div>
+        </div>
 
-    `;
-
+        `;
+      } catch(err) {
+        // catches errors both in fetch and response.json
+        alert('This lyrics is not found!!!!');
+        location.reload()
+      }
+    
     console.log(data);
 }
 
