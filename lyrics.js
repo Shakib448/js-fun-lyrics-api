@@ -101,7 +101,7 @@ async function getLyrics(artist, songTitle){
         `;
       } catch(err) {
         // catches errors both in fetch and response.json
-        alert('This lyrics is not found!!!!');
+        alert('This lyrics is not found!. We have to reload the page for this issue.');
         location.reload()
       }
     
