@@ -98,6 +98,3 @@ async function getLyrics(artist, songTitle){
     console.log(data);
 }
 
-{/* <div class="col-md-3 text-md-right text-center">
-    <button class="btn btn-success">Get Lyrics</button>
-</div> */}
