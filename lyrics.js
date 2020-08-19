@@ -30,7 +30,8 @@ async function searchSong(searchValue){
 }
 
 function showData(data){
-    // I don't know how to print 10 data using map function please try to help mee Thanks // 
+    // SLice method for 10 data show// 
+
     result.innerHTML = `
         ${data.data.map(song => `
         <div class="single-result row align-items-center my-3 p-3">
