@@ -24,7 +24,7 @@ form.addEventListener('submit', e =>{
 async function searchSong(searchValue){
     const searchResult =  await fetch(`${API_URL}/suggest/${searchValue}`);
     const data = await searchResult.json();
-
+        
     // console.log(data);
     showData(data) //This connection help to show the data
 }
@@ -55,7 +55,7 @@ function showData(data){
 
         </div>
 
-        `).join('') //This method are joining the all off html tags in html
+        `).slice(0, 10).join('') //This method are joining the all off html tags in html
     }
        
         `
@@ -108,7 +108,5 @@ async function getLyrics(artist, songTitle){
     
     console.log(data);
 }
-
-
 
 
